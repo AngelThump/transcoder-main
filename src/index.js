@@ -52,7 +52,7 @@ const checkTranscodes = async () => {
     if (!success) console.error(`Failed to delete transcode ${transcode.streamId}`);
   }
 
-  setTimeout(checkStreams, 30000);
+  setTimeout(checkTranscodes, 30000);
 };
 
 const transcode = async (stream) => {
