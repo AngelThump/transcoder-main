@@ -87,9 +87,9 @@ const getOutputs = async (stream) => {
   outputs.push({
     name: `${video.Width}p${video.FrameRate}`,
     variant: "src",
-    bandwidth: video.Bandwidth,
+    bandwidth: stats.BwVideo + stats.BwAudio,
     width: video.Width,
-    height: video.height,
+    height: video.Height,
     framerate: video.FrameRate,
   });
 
