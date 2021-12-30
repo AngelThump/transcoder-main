@@ -58,11 +58,11 @@ const checkTranscodes = async () => {
 const transcode = async (stream) => {
   console.info(`Start Transcode: ${stream.user.display_name}`);
 
-  const dropletId = await createDroplet(stream);
-  if (!dropletId) return console.error("Failed to get droplet id..");
-
   const outputs = await getOutputs(stream);
   if (!outputs) return console.error("Failed to get outputs..");
+
+  const dropletId = await createDroplet(stream);
+  if (!dropletId) return console.error("Failed to get droplet id..");
 
   await createTranscode(stream, outputs, dropletId);
 };
@@ -85,7 +85,7 @@ const getOutputs = async (stream) => {
 
   //Source
   outputs.push({
-    name: `${video.Width}p${Video.FrameRate}`,
+    name: `${video.Width}p${video.FrameRate}`,
     variant: "src",
     bandwidth: video.Bandwidth,
     width: video.Width,
