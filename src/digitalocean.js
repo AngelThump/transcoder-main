@@ -4,7 +4,7 @@ const axios = require("axios");
 module.exports.createDroplet = async (stream) => {
   const userData =
     "#!/bin/bash\n" +
-    `wget --username ${config.files.username} --password ${config.files.password} https://${config.files.hostname}.angelthump.com:${config.files.port}/transcoder-image.sh -O /root/startup.sh\n` +
+    `wget --user ${config.files.username} --password ${config.files.password} https://${config.files.hostname}.angelthump.com:${config.files.port}/transcoder-image.sh -O /root/startup.sh\n` +
     "chmod +x /root/startup.sh && /root/startup.sh && rm -r /root/startup.sh";
 
   const transcoderConfig = {
