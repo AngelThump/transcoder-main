@@ -106,7 +106,7 @@ const getOutputs = async (stream) => {
     });
   }
 
-  if (video.Width === 1280 && video.FrameRate >= 29) {
+  if (video.Width === 1280 && video.FrameRate >= 59) {
     outputs.push({
       name: "720p30",
       variant: "medium",
