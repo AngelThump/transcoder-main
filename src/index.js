@@ -9,6 +9,8 @@ const { createDroplet, deleteDroplet } = require("./digitalocean");
 const checkStreams = async () => {
   const streams = await getStreams();
 
+  if (!streams) return setTimeout(checkStreams, 60000);
+
   for (let stream of streams) {
     if (stream.transcode) continue;
 
